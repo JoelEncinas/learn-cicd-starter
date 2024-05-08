@@ -50,6 +50,7 @@ func (cfg *apiConfig) handlerNotesCreate(w http.ResponseWriter, r *http.Request,
 	if err != nil {
 		respondWithError(w, http.StatusInternalServerError, "Couldn't create note")
 		return
+		// comment
 	}
 
 	note, err := cfg.DB.GetNote(r.Context(), id)
