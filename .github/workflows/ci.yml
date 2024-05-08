@@ -19,3 +19,16 @@ jobs:
 
       - name: Force Failure
         run: go test ./...n -cover
+  style:
+    name: check formating
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20'
+      - name: formating
+        run: test -z $(go fmt ./...)
